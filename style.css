@@ -1,0 +1,198 @@
+html {
+    --theme-color: #Eb5632;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*have to gather knowledge about below line*/
+    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(./resources/images/back.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #555;
+}
+
+.wrapper {
+    background-color: #fff;
+    /* height: 700px; */
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.clearfix {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.player-0-panel,
+.player-1-panel {
+    float: left;
+    padding: 100px;
+    height: 600px;
+    width: 50%;
+}
+
+.player-name {
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.player-score {
+    text-align: center;
+    font-size: 80px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    color: var(--theme-color);
+    margin-bottom: 130px;
+}
+
+.active {
+    background-color: #f7f7f7;
+}
+
+.active .player-name {
+    font-weight: 300;
+}
+
+.active .player-name::after {
+    /*have to gather knowledge about below line*/
+    content: "\2022";
+    font-size: 47px;
+    color: var(--theme-color);
+    position: absolute;
+    right: 10px;
+    top: -7px;
+}
+
+.player-current-box {
+    background-color: var(--theme-color);
+    color: #fff;
+    width: 40%;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+}
+
+.player-current-label {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #222;
+    font-size: 12px;
+}
+
+.player-current-score {
+    font-size: 30px;
+}
+
+button {
+    position: absolute;
+    left: 50%;
+    width: 200px;
+
+    /*have to gather knowledge about below line*/
+    transform: translateX(-50%);
+    color: #555;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+
+    /*have to gather knowledge about below line*/
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    font-weight: 600;
+}
+
+button:hover i {
+    margin-right: 20px;
+}
+
+/*have to gather knowledge about below line*/
+button:focus {
+    outline: var(--theme-color);
+}
+
+.btn-new {
+    top: 45px;
+}
+
+.btn-roll {
+    top: 403px;
+}
+
+.btn-hold {
+    top: 467px;
+}
+
+i {
+    color: var(--theme-color);
+    margin-top: -4px;
+    margin-right: 15px;
+    font-size: 32px;
+    /*have to gather knowledge about below lines*/
+    display: inline-block;
+    line-height: 1;
+    vertical-align: text-top;
+    transition: margin 0.3s;
+}
+
+.dice {
+    position: absolute;
+    left: 50%;
+    top: 178px;
+    height: 100px;
+    transform: translateX(-50%);
+    box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
+
+.final-score {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 520px;
+    color: #555;
+    font-size: 18px;
+    font-family: 'Lato';
+    text-align: center;
+    padding: 10px;
+    width: 160px;
+    text-transform: uppercase;
+}
+
+.final-score:focus {
+    outline: none;
+}
+
+.winner {
+    background-color: #f7f7f7;
+}
+
+.winner .player-name {
+    font-weight: 300;
+    color: var(--theme-color);
+}
