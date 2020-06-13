@@ -9,7 +9,6 @@ html {
 }
 
 body {
-    /*have to gather knowledge about below line*/
     background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(./resources/images/back.jpg);
     background-size: cover;
     background-position: center;
@@ -75,7 +74,6 @@ body {
 }
 
 .active .player-name::after {
-    /*have to gather knowledge about below line*/
     content: "\2022";
     font-size: 47px;
     color: var(--theme-color);
@@ -108,8 +106,6 @@ button {
     position: absolute;
     left: 50%;
     width: 200px;
-
-    /*have to gather knowledge about below line*/
     transform: translateX(-50%);
     color: #555;
     background: none;
@@ -120,8 +116,7 @@ button {
     text-transform: uppercase;
     font-weight: 300;
 
-    /*have to gather knowledge about below line*/
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, font-weight 0.1s;
 }
 
 button:hover {
@@ -132,9 +127,8 @@ button:hover i {
     margin-right: 20px;
 }
 
-/*have to gather knowledge about below line*/
 button:focus {
-    outline: var(--theme-color);
+    outline: #aaa solid 2px;
 }
 
 .btn-new {
@@ -154,7 +148,6 @@ i {
     margin-top: -4px;
     margin-right: 15px;
     font-size: 32px;
-    /*have to gather knowledge about below lines*/
     display: inline-block;
     line-height: 1;
     vertical-align: text-top;
