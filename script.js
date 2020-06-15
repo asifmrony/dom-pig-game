@@ -36,7 +36,7 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
     var diceDOM = document.querySelector('.dice');
     diceDOM.style.display = 'block';
     diceDOM.src = './resources/images/dice-' + dice + '.png';
-    console.log(dice);
+
 
 
     //3. add the dice number to roundScore only IF the dice number is not 1
@@ -44,20 +44,54 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         //add score to round score and print to the current score
         roundScore += dice;
         document.querySelector('#current-' + activePlayer).textContent = roundScore;
+
     } else {
-        activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-        roundScore = 0;
-
-        document.getElementById('current-0').textContent = '0';
-        document.getElementById('current-1').textContent = '0';
-
-        document.querySelector('.player-0-panel').classList.remove('active');
-        document.querySelector('.player-1-panel').classList.add('active');
+        //next player
+        nextPlayer();
 
         //problem to tackle : active player change only first time it got 1.
+
+        // document.querySelector('.player-0-panel').classList.remove('active');
+        // document.querySelector('.player-1-panel').classList.add('active');
     }
 });
 
+
+
+
+document.querySelector('.btn-hold').addEventListener('click', function () {
+    //add roundScore to Global Score
+    scores[activePlayer] += roundScore;
+
+    //update the UI element
+    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+
+
+    //check if any player got 100 point and wins.
+    if (scores[activePlayer] >= 100) {
+        document.getElementById('name-' + activePlayer).innerHTML = "WINNER";
+        document.querySelector('.dice').style.display = 'none';
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+    } else {
+        //next player
+        nextPlayer();
+    }
+
+})
+
+function nextPlayer() {
+    activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
+    roundScore = 0;
+
+    document.getElementById('current-0').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+
+    document.querySelector('.player-0-panel').classList.toggle('active');
+    document.querySelector('.player-1-panel').classList.toggle('active');
+
+    document.querySelector('.dice').style.display = 'none';
+}
 
 
 
