@@ -67,9 +67,19 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
         //update the UI element
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
+        //player set finishing score add to a variable 
+        var input = document.querySelector('.final-score').value;
+        var winningScore;
+
+        //if input is blank, winning score will be 100
+        if (input) {
+            winningScore = input;
+        } else {
+            winningScore = 100;
+        }
 
         //check if any player got 100 point and wins.
-        if (scores[activePlayer] >= 100) {
+        if (scores[activePlayer] >= winningScore) {
             document.getElementById('name-' + activePlayer).innerHTML = "WINNER";
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
@@ -121,9 +131,3 @@ function init() {
     document.querySelector('.player-1-panel').classList.remove('active');
     document.querySelector('.player-0-panel').classList.add('active');
 }
-
-//player set finishing score add to a variable 
-var finalScoreDOM = document.querySelector('.final-score').value;
-console.log(finalScoreDOM);
-
-//replace the finalScoreDOM to predefined winning score
