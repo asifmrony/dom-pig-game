@@ -60,7 +60,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 
 
         //check if any player got 100 point and wins.
-        if (scores[activePlayer] >= 20) {
+        if (scores[activePlayer] >= 100) {
             document.getElementById('name-' + activePlayer).innerHTML = "WINNER";
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
